@@ -1,0 +1,157 @@
+<header>
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg border-bottom box-shadow mb-3"
+  >
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']"><img class="logo" src="../assets/barclays.png" alt=""/></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+        [ngClass]="{ show: isExpanded }"
+      >
+        <ul class="navbar-nav flex-grow">
+          <li
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link text-barclay" [routerLink]="['/aboutus']"><fa-icon [icon]="about" [spin]="false"></fa-icon>&nbsp;About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-barclay" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <fa-icon [icon]="bank" [spin]="false"></fa-icon>&nbsp;Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" [routerLink]="['/#']">List of Services</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/#']">Time Deposits</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" [routerLink]="['/#']">Promotion Investments</a></li>
+            </ul>
+          </li>
+  
+
+
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-barclay" [routerLink]="['/contactus']"
+              ><fa-icon [icon]="contactus" [spin]="false"></fa-icon>&nbsp;Contact Us</a
+            >
+          </li>
+
+          <div *ngIf="userName">
+            <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="user" [src]="profilepic" />&nbsp;{{userName}}
+              </a>
+              <ul class="dropdown-menu">
+                <li><a (click)="logOut()" class="dropdown-item" href="#"><fa-icon [icon]="logout" [spin]="false"></fa-icon>&nbsp;Logout</a></li>
+                <li><a class="dropdown-item" [routerLink]="['profile']">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>                
+                <li>
+                  <a class="dropdown-item text-dark" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#staticMessenger"><fa-icon [icon]="msgr" [spin]="false"></fa-icon>&nbsp;Messenger</a>
+                </li>
+              </ul>
+            </li>
+          </ul>          
+
+          </div>
+
+          <div *ngIf="!userName">
+            <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+              <a class="nav-link text-barclay" href="/#" aria-current="page" data-bs-toggle="modal" data-bs-target="#staticLogin"><fa-icon [icon]="login" [spin]="false"></fa-icon>&nbsp;Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-barclay" href="/#" aria-current="page" data-bs-toggle="modal" data-bs-target="#staticRegistration"><fa-icon [icon]="register" [spin]="false"></fa-icon>&nbsp;Register</a>
+            </li>                    
+            </ul>
+          </div>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+  <!-- START-OFF CANVAS -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header bg-primary">
+      <img src="../assets/barclays2.png" class="off-logo"/>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body bg-secondary">
+  
+      <ul class="nav flex-column">
+        <li class="nav-item" data-bs-dismiss="offcanvas">
+          <a class="nav-link text-light" [routerLink]="['aboutus']"><fa-icon [icon]="about" [spin]="false"></fa-icon>&nbsp; About Us</a>
+        </li>
+        <li><hr/></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <fa-icon [icon]="bank" [spin]="false"></fa-icon>&nbsp;Services
+          </a>
+          <ul class="dropdown-menu">
+            <li data-bs-dismiss="offcanvas">
+              <a class="dropdown-item" [routerLink]="['/#']">List of Services</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li data-bs-dismiss="offcanvas">
+              <a class="dropdown-item" [routerLink]="['/#']">Time Deposits</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li data-bs-dismiss="offcanvas">
+              <a class="dropdown-item" [routerLink]="['/#']">Promotion Investments</a></li>
+          </ul>
+        </li>
+        <li><hr/></li>
+  
+        <li class="nav-item" data-bs-dismiss="offcanvas">
+          <a class="nav-link text-light" [routerLink]="['contactus']"><fa-icon [icon]="contactus" [spin]="false"></fa-icon>&nbsp;Contact Us</a>  
+        </li>
+        <li><hr/></li>
+  
+        <div *ngIf="userName">
+          <ul class="nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="user" [src]="profilepic" />&nbsp;{{userName}}
+            </a>
+            <ul class="dropdown-menu">
+              <li data-bs-dismiss="offcanvas"><a (click)="logOut()" class="dropdown-item " href="#"><fa-icon [icon]="logout" [spin]="false"></fa-icon>&nbsp;Logout</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li data-bs-dismiss="offcanvas"><a class="dropdown-item" [routerLink]="['profile']">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li data-bs-dismiss="offcanvas">
+              <a class="dropdown-item text-dark" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#staticMessenger"><fa-icon [icon]="msgr" [spin]="false"></fa-icon>&nbsp;Messenger</a>
+              </li>
+              
+            </ul>
+          </li>
+        </ul>          
+        <li><hr/></li>
+  
+        </div>
+  
+
+
+        <div *ngIf="!userName">
+          <li class="nav-item" data-bs-dismiss="offcanvas">
+            <a class="nav-link text-light" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#staticLogin"><fa-icon [icon]="login" [spin]="false"></fa-icon>&nbsp;Login</a>
+          </li>
+          <li><hr/></li>
+          <li class="nav-item" data-bs-dismiss="offcanvas">
+          <a class="nav-link text-light" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#staticRegistration"><fa-icon [icon]="register" [spin]="false"></fa-icon>&nbsp;Register</a>
+          </li>                    
+          <li><hr/></li>
+        </div>
+  
+      </ul>
+  
+    </div>
+  </div>
+  <!-- END-OFF CANVAS -->
+
+<app-signin></app-signin>
+<app-signup></app-signup>
+<app-messenger></app-messenger>
