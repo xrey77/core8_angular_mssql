@@ -1,0 +1,6 @@
+.price-bottom {
+    display: inline-block;
+    height: 100%;
+    vertical-align: bottom!important;
+    width: 100%;
+}

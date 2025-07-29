@@ -12,7 +12,7 @@ using core8_angular_mssql.Helpers;
 namespace core8_angular_mssql.Migrations
 {
     [DbContext(typeof(DataDbContext))]
-    [Migration("20250725103131_InitialCreate")]
+    [Migration("20250729054002_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -20,10 +20,72 @@ namespace core8_angular_mssql.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("core8_angular_mssql.Entities.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AlertStocks")
+                        .HasColumnType("int")
+                        .HasColumnName("alertstocks");
+
+                    b.Property<string>("Category")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("category");
+
+                    b.Property<decimal>("CostPrice")
+                        .HasColumnType("decimal(10,2)")
+                        .HasColumnName("costprice");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("createdAt");
+
+                    b.Property<int>("CriticalStocks")
+                        .HasColumnType("int")
+                        .HasColumnName("criticalstocks");
+
+                    b.Property<string>("Descriptions")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("descriptions");
+
+                    b.Property<string>("ProductPicture")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("productpicture");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int")
+                        .HasColumnName("qty");
+
+                    b.Property<decimal>("SalePrice")
+                        .HasColumnType("decimal(10,2)")
+                        .HasColumnName("saleprice");
+
+                    b.Property<decimal>("SellPrice")
+                        .HasColumnType("decimal(10,2)")
+                        .HasColumnName("sellprice");
+
+                    b.Property<string>("Unit")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("unit");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("updatedAt");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("products");
+                });
 
             modelBuilder.Entity("core8_angular_mssql.Entities.User", b =>
                 {

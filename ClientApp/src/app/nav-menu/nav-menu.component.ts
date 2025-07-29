@@ -5,8 +5,8 @@ import { faContactCard} from '@fortawesome/free-solid-svg-icons';
 import { faLockOpen } from '@fortawesome/free-solid-svg-icons';
 import { faSignOut } from '@fortawesome/free-solid-svg-icons';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
-import { faInfo } from '@fortawesome/free-solid-svg-icons';
 import { faMessage } from '@fortawesome/free-solid-svg-icons';
+import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav-menu',
@@ -18,13 +18,13 @@ export class NavMenuComponent implements OnInit {
   isExpanded = false;
   userName: any;
   profilepic: any;
+  profile = faUserSecret;
   about = faCircleInfo;
   bank = faBuildingColumns;
   contactus = faContactCard;
   login = faLockOpen;
   logout = faSignOut;
   register = faAddressCard;
-  profile = faInfo;
   msgr = faMessage;
 
   constructor(

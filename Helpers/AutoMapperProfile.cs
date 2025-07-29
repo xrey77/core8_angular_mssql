@@ -13,6 +13,7 @@ namespace core8_angular_mssql.Helpers
             CreateMap<UserLogin, User>();
             CreateMap<UserUpdate, User>();
             CreateMap<UserPasswordUpdate, User>();
+            CreateMap<Product, ProductModel>();
 
         }
     }

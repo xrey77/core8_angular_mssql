@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MfaService } from './interface/mfa.service';
+import { ProductsService } from './products.service';
 
-describe('MfaService', () => {
-  let service: MfaService;
+describe('ProductsService', () => {
+  let service: ProductsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MfaService);
+    service = TestBed.inject(ProductsService);
   });
 
   it('should be created', () => {

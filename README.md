@@ -1,9 +1,24 @@
 .NET NET CORE 8 and Angular 15 start-up project
 
+Requirements:
+1. Node 23.5.0 and NPM 11.1.0
+2. Angular CLI: 20.1.3
+3. Dotnet Core v8.0.204
+4. Microsoft SQL Server Docker Container
+5. Bootstrap 5.2.3
+6. FontAwesome @fortawesome/free-solid-svg-icons@7.0.0
+7. Visual Studio Code
+8. Install Google Authenticator in your Mobile Phone
+
 Features :
-1. Microsoft SQL Server Database
-2. Entity Framework
-3. Authentication and Authorization
+1. Entity Framework
+2. Authentication and Authorization
    BryCrypt, JWT
-4. Time Based One Time Password
-5. Node 23.5.0 and NPM 11.1.0 for Angular requirement
+3. Time Based One Time Password Authenticator
+4. User Profile Picture upload/update
+5. Product Listings and Pagination
+
+If you want to test, do the following:
+1. Setup Microsoft SQL Server
+2. Change Username and Password in appsettings.json
+3. Run, dotnet migrations

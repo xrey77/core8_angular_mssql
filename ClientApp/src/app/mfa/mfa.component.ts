@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
-import { MfaService } from '../mfa.service';
+import { MfaService } from '../interface/mfa.service';
 import { faUserShield } from '@fortawesome/free-solid-svg-icons';
 
 @Component({

@@ -15,11 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DataDbContext>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-
-// builder.Services.AddSwaggerGen(c =>
-//     {
-//         c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "BARCLAYS BANK", Version = "v1" });
-//     });
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 builder.Services.AddSwaggerGen(c =>
     {
@@ -30,13 +27,6 @@ builder.Services.AddSwaggerGen(c =>
                 {
                     return new[] { api.GroupName };
                 }
-
-                // var controllerActionDescriptor = api.ActionDescriptor as ControllerActionDescriptor;
-                // if (controllerActionDescriptor != null)
-                // {
-                //     return new[] { controllerActionDescriptor.ControllerName };
-                // }
-
                 throw new InvalidOperationException("Unable to determine tag for endpoint.");
             });
         c.DocInclusionPredicate((name, api) => true);        

@@ -12,6 +12,30 @@ namespace core8_angular_mssql.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "products",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    category = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    descriptions = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    qty = table.Column<int>(type: "int", nullable: false),
+                    unit = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    costprice = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
+                    sellprice = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
+                    saleprice = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
+                    productpicture = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    alertstocks = table.Column<int>(type: "int", nullable: false),
+                    criticalstocks = table.Column<int>(type: "int", nullable: false),
+                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    updatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_products", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "users",
                 columns: table => new
                 {
@@ -42,6 +66,9 @@ namespace core8_angular_mssql.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "products");
+
             migrationBuilder.DropTable(
                 name: "users");
         }

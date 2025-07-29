@@ -8,9 +8,6 @@ namespace core8_angular_mssql.Helpers
    public class DataDbContext : DbContext
     {
 
-        // public DataDbContext(DbContextOptions<DataDbContext> options): base(options){
-        // }        
-
         protected readonly IConfiguration Configuration;
 
         public DataDbContext(IConfiguration configuration)
@@ -24,7 +21,7 @@ namespace core8_angular_mssql.Helpers
 
 
         public DbSet<User> Users { get; set; }
-
+        public DbSet<Product> Products { get; set; }
     }
 
 }
