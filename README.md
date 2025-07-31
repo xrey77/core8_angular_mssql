@@ -17,6 +17,8 @@ Features :
 3. Time Based One Time Password Authenticator
 4. User Profile Picture upload/update
 5. Product Listings and Pagination
+6. User Account Activation via Email
+7. Swagger RESTful API Documentation
 
 If you want to test, do the following:
 1. Setup Microsoft SQL Server

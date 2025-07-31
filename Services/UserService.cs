@@ -16,6 +16,10 @@ namespace core8_angular_mssql.Services
         void ActivateMfa(int id, bool opt, string qrcode_url);
         void UpdatePicture(int id, string file);
         void UpdatePassword(User user, string password = null);
+        int EmailToken(int etoken);
+        int SendEmailToken(string email);
+        void ActivateUser(int id);
+        void ChangePassword(User userParam);
     }
 
     public class UserService : IUserService
@@ -137,6 +141,69 @@ namespace core8_angular_mssql.Services
                throw new AppException("User not found");
             }                    
         }
-    }
 
+       public void ActivateUser(int id) 
+       {
+            var user = _context.Users.Find(id);
+            if (user.Isblocked == 1) {
+                throw new AppException("Account has been blocked.");
+            }
+            if ( user.Isactivated == 1) {
+                throw new AppException("Account is alread activated.");
+            }
+            user.Isactivated = 1;
+            if (user == null)
+            {
+                throw new AppException("User not found");
+            }
+            _context.Users.Update(user);
+            _context.SaveChanges();            
+       }
+
+        public int SendEmailToken(string email)
+        {
+           var user =  _context.Users.AsQueryable().FirstOrDefault(c => c.Email == email);
+           if (user == null) {
+                throw new AppException("Email Address not found...");
+           }
+            var etoken = EmailToken(user.Mailtoken);
+            user.Mailtoken = etoken;
+            _context.Users.Update(user);
+            _context.SaveChanges();
+            return etoken;
+        }       
+
+        public int EmailToken(int etoken)
+        {
+            int _min = etoken;
+            int _max = 9999;
+            Random _rdm = new Random();
+            return _rdm.Next(_min, _max);
+        }
+
+        public void ChangePassword(User userParam)
+        {
+           var xuser =  _context.Users.AsQueryable().FirstOrDefault(c => c.Email == userParam.Email);
+           var etoken = EmailToken(xuser.Mailtoken);
+
+
+            if (xuser == null) {
+                throw new AppException("Email Address not found...");
+            }           
+            if (xuser.UserName != userParam.UserName)
+            {
+                throw new AppException("Username not found...");
+            }
+            if (xuser.Password == null)
+            {
+                throw new AppException("Please enter Password...");
+            }
+            xuser.Password = BCrypt.Net.BCrypt.HashPassword(userParam.Password);
+            _context.Users.Update(xuser);
+            _context.SaveChanges();
+        }
+
+
+
+    }
 }
