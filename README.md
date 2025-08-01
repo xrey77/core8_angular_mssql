@@ -1,3 +1,4 @@
+SPA - Single Page Application
 .NET NET CORE 8 and Angular 15 start-up project
 
 Requirements:
@@ -8,7 +9,8 @@ Requirements:
 5. Bootstrap 5.2.3
 6. FontAwesome @fortawesome/free-solid-svg-icons@7.0.0
 7. Visual Studio Code
-8. Install Google Authenticator in your Mobile Phone
+8. Postman for end-point testing
+9. Install Google Authenticator in your Mobile Phone
 
 Features :
 1. Entity Framework
