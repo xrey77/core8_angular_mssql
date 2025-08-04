@@ -1,4 +1,5 @@
-.NET NET CORE 8 and Angular 15 start-up project
+SPA - Single Page Application
+.NET NET CORE 8, Angular 15 and Microsoft SQL Server 2019 start-up project
 
 Requirements:
 1. Node 23.5.0 and NPM 11.1.0
