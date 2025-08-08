@@ -1,12 +1,12 @@
 using System;
 using AutoMapper;
-using core8_angular_mssql.Models;
-using core8_angular_mssql.Services;
 using Google.Authenticator;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using core8_angular_mssql.Models;
+using core8_angular_mssql.Services;
 
 namespace core8_angular_mssql.Controllers.Auth
 {

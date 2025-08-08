@@ -1,15 +1,16 @@
 SPA - Single Page Application
-.NET NET CORE 8, Angular 15 and Microsoft SQL Server 2019 start-up project
+.NET NET CORE 8 CLI, Angular 15 CLI and Microsoft SQL Server 2019 start-up project
 
 Requirements:
-1. Node 23.5.0 and NPM 11.1.0
-2. Angular CLI: 20.1.3
-3. Dotnet Core v8.0.204
-4. Microsoft SQL Server Docker Container
-5. Bootstrap 5.2.3
-6. FontAwesome @fortawesome/free-solid-svg-icons@7.0.0
-7. Visual Studio Code
-8. Install Google Authenticator in your Mobile Phone
+1. Knowledge of C# and Angular CLI
+2. Node 23.5.0 and NPM 11.1.0
+3. Angular CLI: 20.1.3
+4. Dotnet Core v8.0.204
+5. Microsoft SQL Server Docker Container
+6. Bootstrap 5.2.3
+7. FontAwesome @fortawesome/free-solid-svg-icons@7.0.0
+8. Visual Studio Code
+9. Install Google Authenticator in your Mobile Phone
 
 Features :
 1. Entity Framework
