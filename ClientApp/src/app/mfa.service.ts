@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import {  Observable, of, throwError } from 'rxjs';
 import { retry, catchError} from 'rxjs/operators';
-import { Mfa } from './mfa';
+import { Mfa } from './interface/mfa';
 
 @Injectable({
   providedIn: 'root'

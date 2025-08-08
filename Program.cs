@@ -7,10 +7,9 @@ using core8_angular_mssql.Helpers;
 using core8_angular_mssql.Services;
 using Microsoft.Extensions.FileProviders;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DataDbContext>();

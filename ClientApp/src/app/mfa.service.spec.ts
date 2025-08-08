@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MfaService } from './interface/mfa.service';
+import { MfaService } from './mfa.service';
 
 describe('MfaService', () => {
   let service: MfaService;
