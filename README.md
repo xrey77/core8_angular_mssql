@@ -1,4 +1,5 @@
 SPA - Single Page Application
+
 .NET NET CORE 8 CLI, Angular 15 CLI and Microsoft SQL Server 2019 start-up project
 
 Requirements:
