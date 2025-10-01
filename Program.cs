@@ -3,11 +3,11 @@ using System.Text;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using core8_angular_mssql.Helpers;
-using core8_angular_mssql.Services;
 using Microsoft.Extensions.FileProviders;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.OpenApi.Models;
+using core8_angular_mssql.Helpers;
+using core8_angular_mssql.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +16,8 @@ builder.Services.AddDbContext<DataDbContext>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+
+
 
 builder.Services.AddSwaggerGen(c =>
     {

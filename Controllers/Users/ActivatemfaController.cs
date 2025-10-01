@@ -1,13 +1,13 @@
 using AutoMapper;
-using core8_angular_mssql.Models;
-using core8_angular_mssql.Models.dto;
-using core8_angular_mssql.Services;
 using Microsoft.AspNetCore.Mvc;
 using Google.Authenticator;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
+using core8_angular_mssql.Models;
+using core8_angular_mssql.Models.dto;
+using core8_angular_mssql.Services;
 
 namespace core8_angular_mssql.Controllers.Users
 {
@@ -54,7 +54,7 @@ namespace core8_angular_mssql.Controllers.Users
                     _userService.ActivateMfa(id, true, imageUrl);
                     return Ok(new {statuscode = 200, message="2-Factor Authenticator has been enabled."});
                 } else {
-                    return Ok(new {statuscode = 404, message="User not found."});
+                    return NotFound(new {statuscode = 404, message="User not found."});
                 }
 
             } else {
