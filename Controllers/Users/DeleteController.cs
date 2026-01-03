@@ -44,7 +44,7 @@ namespace core8_angular_mssql.Controllers.Users
             try
             {
                 _userService.Delete(id);
-                return Ok(new {statucode = 200, message="Deleted Successfylly.."});
+                return Ok(new {message="Deleted Successfylly.."});
            }
             catch (AppException ex)
             {

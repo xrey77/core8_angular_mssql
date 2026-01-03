@@ -52,7 +52,7 @@ public class LoginController : ControllerBase
     [HttpPost("/signin")]
     public IActionResult signin(UserLogin model) {
             try {
-                 User xuser = _authService.SignUser(model.Username, model.Password);
+                 User xuser = _authService.SigninUser(model.Username, model.Password);
                  if (xuser != null) {
 
                     var tokenHandler = new JwtSecurityTokenHandler();
@@ -72,16 +72,15 @@ public class LoginController : ControllerBase
                     };
                     var token = tokenHandler.CreateToken(tokenDescriptor);
                     var tokenString = tokenHandler.WriteToken(token);
-
+                    var role = _authService.getRolename(xuser.RolesId);
 
                     return Ok(new { 
-                        statuscode = 200,
                         message = "Login Successfull, please wait..",
                         id = xuser.Id,
                         lastname = xuser.LastName,
                         firstname = xuser.FirstName,
                         username = xuser.UserName,
-                        roles = xuser.Roles,
+                        roles = role.Name,
                         isactivated = xuser.Isactivated,
                         isblocked = xuser.Isblocked,
                         profilepic = xuser.Profilepic,
@@ -89,12 +88,12 @@ public class LoginController : ControllerBase
                         token = tokenString
                         });
                  } else {
-                    return NotFound(new { statuscode = 404, message = "Username not found.."});
+                    return NotFound(new { message = "Username not found.."});
                  }
             }
             catch (AppException ex)
             {
-                return BadRequest(new {Message = ex.Message});
+                return BadRequest(new {message = ex.Message});
             }
 
     }

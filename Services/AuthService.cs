@@ -16,7 +16,8 @@ namespace core8_angular_mssql.Services
 {    
     public interface IAuthService {
         User SignupUser(User userdata, string passwd);
-        User SignUser(string usrname, string pwd);
+        User SigninUser(string usrname, string pwd);
+        Role getRolename(int id);
     }
 
     public class AuthService : IAuthService
@@ -68,13 +69,19 @@ namespace core8_angular_mssql.Services
             userdata.Secretkey = secretkey.ToUpper();             
             userdata.Password = BCrypt.Net.BCrypt.HashPassword(passwd);
             userdata.Profilepic = "https://localhost:7280/images/pix.png";
-            userdata.Roles="USER";
+            userdata.RolesId = 1;
             _context.Users.Add(userdata);                
             _context.SaveChanges();
             return userdata;
         }
 
-        public User SignUser(string usrname, string pwd)
+        public Role getRolename(int id) {
+            Role role = _context.Roles.Where(r => r.Id == id).FirstOrDefault();
+            return role;
+        }
+
+
+        public User SigninUser(string usrname, string pwd)
         {
            try {
                     User xuser = _context.Users.Where(c => c.UserName == usrname).FirstOrDefault();

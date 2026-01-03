@@ -101,11 +101,11 @@ namespace core8_angular_mssql.Controllers.Users
                     }
                     catch (Exception ex)
                     {
-                        return BadRequest(new {statuscode = 400, message =ex.Message});
+                        return BadRequest(new { message =ex.Message});
                     }
 
                 }
-                return NotFound(new { statuscode = 404, message = "Profile Picture not found."});
+                return NotFound(new { message = "Profile Picture not found."});
 
         }
     }

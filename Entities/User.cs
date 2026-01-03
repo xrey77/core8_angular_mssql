@@ -29,9 +29,6 @@ namespace core8_angular_mssql.Entities
         [Column("mobile")]
         public string Mobile { get; set; }
 
-        [Column("roles")]        
-        public string Roles { get; set; }
-
         [Column("isactivated")]
         public int Isactivated {get; set;}
 
@@ -55,6 +52,11 @@ namespace core8_angular_mssql.Entities
 
         [Column("updatedAt")]
         public DateTime UpdatedAt  {get; set;}
+
+        [Column("roles_id")] 
+        public int RolesId { get; set; } 
+
+        public ICollection<Role> Roles { get; set; } = new List<Role>();
 
     }
 }

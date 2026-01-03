@@ -49,14 +49,12 @@ namespace core8_angular_mssql.Controllers.Users
                 var user = _userService.GetById(id);
                 var model = _mapper.Map<UserModel>(user);
                 return Ok(new {
-                    statuscode = 200,
                     message = "User found, please wait.",
                     user = model
                 });
 
             } catch(AppException ex) {
                 return NotFound(new {
-                    statuscode = 404,
                     message = ex.Message
                 });
 

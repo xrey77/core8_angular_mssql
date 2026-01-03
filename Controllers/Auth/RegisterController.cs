@@ -21,7 +21,7 @@ namespace core8_angular_mssql.Controllers.Auth
 public class RegisterController : ControllerBase
 {
     private IAuthService _authService;
-    private EmailService _emailService;    
+    // private EmailService _emailService;    
     private IMapper _mapper;
     private readonly IWebHostEnvironment _env;
     private readonly IConfiguration _configuration;  
@@ -30,14 +30,14 @@ public class RegisterController : ControllerBase
     public RegisterController(
         IWebHostEnvironment env,
         IAuthService userService,
-        EmailService emailService,
+        // EmailService emailService,
         IConfiguration configuration,
         IMapper mapper,
         ILogger<RegisterController> logger
         )
     {   
         _authService = userService;
-        _emailService = emailService;
+        // _emailService = emailService;
         _configuration = configuration;  
         _mapper = mapper;
         _logger = logger;
@@ -66,11 +66,11 @@ public class RegisterController : ControllerBase
                 // IF YOU WISH TO USE USER EMAIL ACTIVATION, JUST UNCOMMENT _emailService.sendMail
                 // _emailService.sendMail(emailaddress, fullname, subject, htmlmsg);
                 // and comment  user.Isactivated = 1;    
-                return Ok(new {statuscode = 200, message = "Please check your e-mail inbox and click button activation"});
+                return Ok(new {message = "Please check your e-mail inbox and click button activation"});
             }
             catch (AppException ex)
             {
-                return BadRequest(new { statuscode = 400, message = ex.Message });
+                return BadRequest(new { message = ex.Message });
             }
     }
 

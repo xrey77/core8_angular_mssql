@@ -1,12 +1,12 @@
 SPA - Single Page Application
-.NET NET CORE 8 CLI, Angular 15 CLI and Microsoft SQL Server 2019 start-up project
+.NET NET CORE 8 CLI, Angular 15 CLI and Microsoft SQL Server 2019 / Azure SQL start-up project
 
 Requirements:
 1. Knowledge of C# and Angular CLI
 2. Node 23.5.0 and NPM 11.1.0
 3. Angular CLI: 20.1.3
 4. Dotnet Core v8.0.204
-5. Microsoft SQL Server Docker Container
+5. Microsoft SQL Server 2017/2019 or Azure SQL Docker Container
 6. Bootstrap 5.2.3
 7. FontAwesome @fortawesome/free-solid-svg-icons@7.0.0
 8. Visual Studio Code
@@ -20,7 +20,7 @@ Features :
 4. User Profile Picture upload/update
 5. Product Listings and Pagination
 6. User Account Activation via Email
-7. Swagger RESTful API Documentation
+7. Swagger RESTful API Documentation, https://localhost:7280/swagger/index.html
 
 If you want to test, do the following:
 1. Setup Microsoft SQL Server
