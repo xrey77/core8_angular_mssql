@@ -10,10 +10,10 @@
           <form #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm)" novalidate autocomplete="off">
 
           <div class="mb-3">
-                <input type="text" class="form-control" name="username" required [(ngModel)]="username" placeholder="enter Username" autocomplete="off">
+                <input type="text" class="form-control border-primary" name="username" required [(ngModel)]="username" placeholder="enter Username" autocomplete="off">
               </div>
               <div class="mb-3">
-                <input type="password" class="form-control" name="password" required [(ngModel)]="password" placeholder="enter Password" autocomplete="off">
+                <input type="password" class="form-control border-primary" name="password" required [(ngModel)]="password" placeholder="enter Password" autocomplete="off">
               </div>
               <button type="submit" class="btn btn-primary">login</button>
           </form>

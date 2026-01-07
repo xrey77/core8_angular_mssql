@@ -1,8 +1,8 @@
 <div class="modal fade" id="staticRegistration" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticRegistrationLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header bg-primary">
-          <h1 class="modal-title fs-5 text-white" id="staticRegistrationLabel"><fa-icon [icon]="addresscard" [spin]="true"></fa-icon>&nbsp;&nbsp;  Account Registration</h1>
+        <div class="modal-header bg-info">
+          <h1 class="modal-title fs-5 text-dark" id="staticRegistrationLabel"><fa-icon [icon]="addresscard" [spin]="true"></fa-icon>&nbsp;&nbsp;  Account Registration</h1>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -11,24 +11,24 @@
                 <div class="row">
                     <div class="col">
                         <div class="mb-3">
-                            <input type="text" class="form-control" name="firstname" [(ngModel)]="firstname" placeholder="enter First Name">
+                            <input type="text" class="form-control border-info" name="firstname" [(ngModel)]="firstname" placeholder="enter First Name">
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
-                            <input type="text" class="form-control" required name="lastname" [(ngModel)]="lastname" placeholder="enter Last Name">
+                            <input type="text" class="form-control border-info" required name="lastname" [(ngModel)]="lastname" placeholder="enter Last Name">
                         </div>        
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <div class="mb-3">
-                            <input type="email" class="form-control" required name="email" [(ngModel)]="email" placeholder="enter Email Address" autocompleo="off">
+                            <input type="email" class="form-control border-info" required name="email" [(ngModel)]="email" placeholder="enter Email Address" autocompleo="off">
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
-                            <input type="text" class="form-control" required name="mobile" [(ngModel)]="mobile" placeholder="enter Mobile No." autocompleo="off">
+                            <input type="text" class="form-control border-info" required name="mobile" [(ngModel)]="mobile" placeholder="enter Mobile No." autocompleo="off">
                         </div>        
                     </div>
                 </div>
@@ -36,17 +36,19 @@
                 <div class="row">
                     <div class="col">
                         <div class="mb-3">
-                            <input type="text" class="form-control" required name="username" [(ngModel)]="username" placeholder="enter Username" autocompleo="off">
+                            <input type="text" class="form-control border-info" required name="username" [(ngModel)]="username" placeholder="enter Username" autocompleo="off">
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
-                            <input type="password" class="form-control" required name="password" [(ngModel)]="password" placeholder="enter Password" autocompleo="off">
+                            <input type="password" class="form-control border-info" required name="password" [(ngModel)]="password" placeholder="enter Password" autocompleo="off">
                         </div>        
                     </div>
                 </div>
 
-                  <button type="submit" class="btn btn-primary">register</button>
+                  <button type="submit" class="btn  btn-info">register</button>
+                  <button type="reset" class="btn btn-info mx-1">rest</button>
+
               </form>
     
         </div>

@@ -21,6 +21,9 @@ Features :
 5. Product Listings and Pagination
 6. User Account Activation via Email
 7. Swagger RESTful API Documentation, https://localhost:7280/swagger/index.html
+8. Products Report (pdf)
+9. Sales Chart (graph)
+
 
 If you want to test, do the following:
 1. Setup Microsoft SQL Server

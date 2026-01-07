@@ -8,6 +8,8 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.OpenApi.Models;
 using core8_angular_mssql.Helpers;
 using core8_angular_mssql.Services;
+using QuestPDF.Infrastructure;
+QuestPDF.Settings.License = LicenseType.Community;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,8 +18,6 @@ builder.Services.AddDbContext<DataDbContext>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IProductService, ProductService>();
-
-
 
 builder.Services.AddSwaggerGen(c =>
     {
@@ -79,7 +79,16 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IJWTTokenServices, JWTServiceManage>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
+// builder.Services.AddCors(options =>
+// {
+//     options.AddDefaultPolicy(policy =>
+//     {
+//         policy.WithOrigins("https://localhost:44443/")
+//               .AllowAnyHeader()
+//               .AllowAnyMethod()
+//               .WithExposedHeaders("Content-Disposition");
+//     });
+// });
 
 var app = builder.Build();
 

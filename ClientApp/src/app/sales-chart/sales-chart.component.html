@@ -1,0 +1,27 @@
+<div class="pdf-container" *ngIf="pdfUrl">
+  <object i="graph"
+    [data]="pdfUrl" 
+    type="application/pdf" 
+    width="100%" 
+    height="600px">
+    <p>
+      Your browser does not support inline PDFs. 
+      <a [href]="pdfUrl" download="report.pdf">Download PDF instead</a>.
+    </p>
+  </object>
+</div>
+
+<!-- <div class="pdf-container" *ngIf="pdfUrl && isLoaded">
+  <object [data]="pdfUrl" type="application/pdf" width="100%" height="600px">
+    <p>Browser not supported. <a [href]="pdfUrl">Download</a></p>
+  </object>
+</div> -->
+<!--
+<div class="pdf-container" *ngIf="pdfUrl">
+  <iframe 
+    [src]="pdfUrl" 
+    width="100%" 
+    height="600px" 
+    frameborder="0">
+  </iframe>
+</div> -->

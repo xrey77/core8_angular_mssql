@@ -21,17 +21,15 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-barclay" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <fa-icon [icon]="bank" [spin]="false"></fa-icon>&nbsp;Services
+              <fa-icon [icon]="bank" [spin]="false"></fa-icon>&nbsp;Information
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" [routerLink]="['/#']">List of Services</a></li>
-              <li><a class="dropdown-item" [routerLink]="['/#']">Time Deposits</a></li>
-              <li><a class="dropdown-item" [routerLink]="['/#']">Promotion Investments</a></li>
-              <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" [routerLink]="['/listproducts']">Product List</a></li>
               <li><a class="dropdown-item" [routerLink]="['/productcatalog']">Product Catalog</a></li>
               <li><a class="dropdown-item" [routerLink]="['/searchproducts']">Search Product</a></li>
-
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" [routerLink]="['/productsreport']">Products Report</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/saleschart']">Sales Graph</a></li>
             </ul>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
@@ -92,17 +90,22 @@
         <li><hr/></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <fa-icon [icon]="bank" [spin]="false"></fa-icon>&nbsp;Services
+            <fa-icon [icon]="bank" [spin]="false"></fa-icon>&nbsp;Information
           </a>
           <ul class="dropdown-menu">
+            
             <li data-bs-dismiss="offcanvas">
-              <a class="dropdown-item" [routerLink]="['/#']">List of Services</a></li>
+              <a class="dropdown-item" [routerLink]="['/listproducts']">Product List</a></li>
             <li><hr class="dropdown-divider"></li>
             <li data-bs-dismiss="offcanvas">
-              <a class="dropdown-item" [routerLink]="['/#']">Time Deposits</a></li>
+              <a class="dropdown-item" [routerLink]="['/productcatalog']">Product Catalog</a></li>
+            <li data-bs-dismiss="offcanvas">
+                <a class="dropdown-item" [routerLink]="['/searchproducts']">Search Product</a></li>
             <li><hr class="dropdown-divider"></li>
             <li data-bs-dismiss="offcanvas">
-              <a class="dropdown-item" [routerLink]="['/#']">Promotion Investments</a></li>
+                <a class="dropdown-item" [routerLink]="['/productsreport']">Products Report</a></li>
+            <li data-bs-dismiss="offcanvas">
+                <a class="dropdown-item" [routerLink]="['/saleschart']">Sales Graph</a></li>
           </ul>
         </li>
         <li><hr/></li>

@@ -5,3 +5,7 @@
 .product-size {
     width: 300px;
 }
+
+.card {
+    height: 85vh !important;
+}

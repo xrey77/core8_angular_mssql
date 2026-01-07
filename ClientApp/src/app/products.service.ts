@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import {  Observable, of, throwError } from 'rxjs';
-import { retry, catchError} from 'rxjs/operators';
-import { Product } from './interface/product';
+import {  Observable, catchError, of, throwError } from 'rxjs';
+
+export interface SearchResponse {
+  products: any[];
+  message: string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService {
 
+export class ProductsService {
+  private charturl = "https://localhost:7280/chart";
   constructor(
     private httpclient: HttpClient
   ) { }
@@ -33,7 +37,7 @@ export class ProductsService {
         // 'Authorization': 'jwt-token'
       })
     };
-    return this.httpclient.post<any>("https://localhost:7280/api/searchproducts", search, options)
+    return this.httpclient.post<SearchResponse>("https://localhost:7280/api/searchproducts", search, options)
     .pipe(
       catchError(this.handleError())
     );        
@@ -52,6 +56,15 @@ export class ProductsService {
     .pipe(
       catchError(this.handleError())
     );        
+  }
 
+  public showPdfReport(): Observable<Blob> {
+    return this.httpclient.get('https://localhost:7280/products/report', { 
+      responseType: 'blob' 
+    });
+  }
+
+  public showSalesGraph(): Observable<Blob> {
+    return this.httpclient.get(this.charturl, { responseType: 'blob' });
   }
 }

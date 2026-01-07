@@ -1,0 +1,9 @@
+.about {
+    top: -80px !important;
+    height: 50vh !important;
+    width: 100% !important;
+}
+
+.txt {
+    text-align: justify;
+}

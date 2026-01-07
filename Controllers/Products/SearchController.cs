@@ -40,8 +40,12 @@ namespace core8_angular_mssql.Controllers.Products
         public IActionResult SearchProducts(ProductSearch prod) {
             try {                
                 var products = _productService.SearchAll(prod.Search);
-                if (products != null) {
+                if (products is not null) {
                     var model = _mapper.Map<IList<ProductModel>>(products);
+                    if (model.Count() == 0){
+                        return NotFound(new {message="No Data found."});
+                    }
+
                     return Ok(new {products=model});
                 } else {
                     return NotFound(new {message="No Data found."});

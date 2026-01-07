@@ -22,6 +22,8 @@ import { MessengerComponent } from './messenger/messenger.component';
 import { CatalogComponent } from './products/catalog/catalog.component';
 import { ListComponent } from './products/list/list.component';
 import { SearchComponent } from './products/search/search.component';
+import { ProductReportComponent } from './product-report/product-report.component';
+import { SalesChartComponent } from './sales-chart/sales-chart.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { SearchComponent } from './products/search/search.component';
     MessengerComponent,
     CatalogComponent,
     ListComponent,
-    SearchComponent
+    SearchComponent,
+    ProductReportComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -53,10 +56,12 @@ import { SearchComponent } from './products/search/search.component';
       { path: 'productcatalog', component: CatalogComponent },   
       { path: 'listproducts', component: ListComponent },   
       { path: 'searchproducts', component: SearchComponent },   
-
+      { path: 'productsreport', component: ProductReportComponent },   
+      { path: 'saleschart', component: SalesChartComponent },   
     ])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}
